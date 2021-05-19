@@ -69,13 +69,16 @@
       },
       {
         "__id__": 11
+      },
+      {
+        "__id__": 13
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 13
+        "__id__": 15
       }
     ],
     "_prefab": null,
@@ -321,8 +324,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 255,
-      "height": 187
+      "width": 100,
+      "height": 70
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -372,7 +375,7 @@
       "__uuid__": "684b2be1-51a8-4985-b93e-7822458eb00f"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -433,7 +436,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 451.190466729836
+      "z": 338.61593287971556
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -487,6 +490,110 @@
     },
     "_renderStages": 1,
     "_id": "e1oDzb0NFJzL/khYMTclm/"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "enemy",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_level": 1,
+    "_components": [
+      {
+        "__id__": 14
+      }
+    ],
+    "_prefab": null,
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 0,
+      "height": 0
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_position": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 338.61593
+    },
+    "_scale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_is3DNode": false,
+    "groupIndex": 0,
+    "_id": "d5dV4AGGFJG4aiWzxlOwOZ"
+  },
+  {
+    "__type__": "a4668/GLElE6rnea1TU+Wq3",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 13
+    },
+    "_enabled": true,
+    "enemy1": {
+      "__uuid__": "4940d0cb-9fcd-4a19-ab88-0e2db4cdcb5f"
+    },
+    "enemy2": {
+      "__uuid__": "18926225-2f2b-4ac8-851b-e71a9491ee50"
+    },
+    "enemy3": {
+      "__uuid__": "e1524923-0d40-4c81-b96c-f098d2e53583"
+    },
+    "enemy4": {
+      "__uuid__": "f99150b5-0039-4ce9-9a8d-5fa24cb50c86"
+    },
+    "enemy5": {
+      "__uuid__": "c564d0eb-6f87-4637-8872-f57aaf844bba"
+    },
+    "enemy6": {
+      "__uuid__": "d009a57a-b353-44fc-9663-5db29b8ff1d8"
+    },
+    "enemy7": {
+      "__uuid__": "3bb8f862-ee0a-45bb-a652-7eed6ddea10a"
+    },
+    "enemy8": {
+      "__uuid__": "88d73f58-52c8-42fb-be51-29a31fa3ac6b"
+    },
+    "enemy9": {
+      "__uuid__": "4b088368-7f68-42dc-9193-bedaba7a87d7"
+    },
+    "enemy10": {
+      "__uuid__": "12a87be2-bc05-4e80-9810-01f8a5ef1725"
+    },
+    "enemy11": {
+      "__uuid__": "99e9bf53-cb7b-459e-bd34-e1bb2e4c6ed6"
+    },
+    "enemy12": {
+      "__uuid__": "61eaa02f-e9fa-45c6-a697-d0df7c811e03"
+    },
+    "_id": "69ICIrYE1IQqwANa8Af5bv"
   },
   {
     "__type__": "cc.Canvas",
