@@ -47,8 +47,8 @@
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": 143,
-      "y": 1138,
+      "x": 100,
+      "y": 100,
       "z": 0
     },
     "_scale": {
@@ -107,7 +107,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "c564d0eb-6f87-4637-8872-f57aaf844bba"
     },
     "fileId": "49wrHw4bhLF6Q5bEqjUg7i",
     "sync": false

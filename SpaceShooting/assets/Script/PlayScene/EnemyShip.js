@@ -9,6 +9,8 @@
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 import enemyList from "./Config";
 
+// const 
+
 cc.Class({
   extends: cc.Component,
 
@@ -28,10 +30,26 @@ cc.Class({
     enemy: cc.Node,
     objEnemy: cc.Object,
     listEnemy: cc.Node,
+    _wave1:{
+      default:[],
+      serializable:false,
+    },
+    _position:{
+      default:new cc.Vec2(),
+      serializable: false,
+    }
     // listEnemy:cc.Node,
   },
 
-  createEnemy(type) {
+  // getData(){
+  //   cc.loader.loadRes('MapEnemy.json',this.getMap.bind(this))
+  // },
+
+  // getMap(){
+
+  // },
+
+  createEnemy(type,pos) {
     // var enemy;
     // var objEnemy;
     // this.newArr = [];
@@ -41,19 +59,22 @@ cc.Class({
       case 1:
         this.enemy = cc.instantiate(this.enemy1);
         this.enemy.parent = this.node;
+        this.enemy.setPosition(0,0)
         this.objEnemy = Object.values(enemyList)[0];
-        cc.log(this.enemy);
+        // cc.log(this.enemy);
+        // cc.log(this.enemy.position)
         cc.tween(this.enemy)
-          .by(1, { position: cc.v2(-1, -75) }, { easing: "sineOutIn" })
+          .by(1, { position: pos }, { easing: "sineOutIn" })
           .start();
         // cc.log(typeof enemy);
         // cc.log(objEnemy.damage);
-        cc.log(this.enemy.position);
+        // cc.log(this.enemy.position);
         break;
       case 2:
-        enemy = cc.instantiate(this.enemy2);
-        objEnemy = Object.values(enemyList)[1];
-        cc.log(objEnemy.damage);
+        this.enemy = cc.instantiate(this.enemy2);
+        this.enemy.parent = this.node;
+        this.objEnemy = Object.values(enemyList)[1];
+        // cc.log(objEnemy.damage);
         break;
       case 3:
         enemy = cc.instantiate(this.enemy3);
@@ -110,8 +131,25 @@ cc.Class({
 
   makeWave1() {
     this.valuesObj = Object.values(enemyList);
-    this.createEnemy(this.valuesObj[0].type);
-    this.listEnemy.addChild(this.enemy);
+    // this.createEnemy(this.valuesObj[0].type);
+    let index = 0;
+    cc.log(this._wave1[index])
+    for (let i=0;i<8;i++){
+      for (let j=0; j< 4; j++){
+        if(this._wave1[index]===1){
+          this._position = cc.v2((1440/8) * j- 420, (-(720/8)*i)+250);
+          this.createEnemy(this.valuesObj[0].type,this._position);
+          cc.log('1',this.enemy.position);
+        } else if (this._wave1[index]===2){
+          this.enemy.position = cc.v2((1440/8) * j- 420, (-(720/8)*i)+250);
+          this.createEnemy(this.valuesObj[1].type,this._position);
+          cc.log('2',this.enemy.position)
+        }
+        index++;
+      }
+    }
+    
+    // this.listEnemy.addChild(this.enemy);
   },
 
   // createOrbit(){
@@ -127,7 +165,7 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
 
   onLoad() {
-    this.createEnemy(Object.values(enemyList)[0].type);
+    // this.createEnemy(Object.values(enemyList)[0].type);
 
     // this.makeWave1();
     // cc.log(this.valuesObj);
@@ -136,7 +174,20 @@ cc.Class({
     // cc.log(this.listEnemy)
   },
 
-  start() {},
+    getMap(err, obj){
+      if(err){
+        cc.log(err)
+        return;
+      }
+      let data = obj.json
+      this._wave1 = obj.json.wave1.map;
+      this.makeWave1()
+      cc.log(this._wave1);
+
+    },
+  start() {
+    cc.loader.loadRes('MapEnemy.json',this.getMap.bind(this))
+  },
 
   //   init() {
   //     this.Prefab = {};
