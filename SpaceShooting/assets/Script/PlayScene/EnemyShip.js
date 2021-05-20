@@ -137,7 +137,8 @@ cc.Class({
     for (let i=0;i<8;i++){
       for (let j=0; j< 4; j++){
         if(this._wave1[index]===1){
-          this._position = cc.v2((1440/8) * j- 420, (-(720/8)*i)+250);
+          // this._position = cc.v2((1440/8) * j- 420, (-(720/8)*i)+250);
+          this._position = cc.v2(-265+(760/8)*i,1200-(1000/4)*j);
           this.createEnemy(this.valuesObj[0].type,this._position);
           cc.log('1',this.enemy.position);
         } else if (this._wave1[index]===2){
